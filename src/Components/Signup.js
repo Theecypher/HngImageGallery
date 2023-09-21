@@ -1,16 +1,11 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth } from './firebase'
 import '../styles/signup.css'
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import app  from './firebase'
 
-// const auth = getAuth();
-// onAuthStateChanged(auth, (user) => {
-//   if (user) {
-//   } else {
-//   }
-// });
+const auth = getAuth(app);
+
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -22,21 +17,18 @@ const Signup = () => {
     const onSubmit = async (e) => {
         e.preventDefault();
 
-        const auth = getAuth();
-        console.log(auth.currentUser);
-
-        // await createUserWithEmailAndPassword(auth, email, password)
-        // .then((userCredential) => {
-        //     const user = userCredential.user;
-        //     console.log(user);
-        //     navigate("/PictureSlide")
-        // })
-        // .catch((error) => {
-        //     const errorCode = error.code;
-        //     const errorMessage = error.message;
-        //     setError("Email or Password wrong");
-        //     console.log(errorCode, errorMessage);  
-        // });
+        await signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            console.log(user);
+            navigate("/PictureSlide")
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            setError("Email or Password wrong");
+            console.log(errorCode, errorMessage);  
+        });
     }
 
     return ( 
