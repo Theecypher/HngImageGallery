@@ -36,10 +36,6 @@ const Signup = () => {
             <main>
                             <h1> Image Gallery </h1>
                 <section>
-                    // <div className="example">
-                    //     <h4>Email: user@example.com</h4>
-                    //     <h4>Password: 1Password</h4>
-                    // </div>
                     <div>
                         <div className="form">
                             <form>
