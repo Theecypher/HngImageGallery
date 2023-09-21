@@ -1,49 +1,76 @@
 * {
+  text-align: center;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-body {
-  min-height: 100vh;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  /* -webkit-font-smoothing: antialiased; */
-  /* -moz-osx-font-smoothing: grayscale; */
-  background-color: white;
+img {
+  width: 280px;
+  height: 280px;
+  margin: 10px;
+}
+.overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+.overlay img {
+  width: 500px;
+  height: 300px;
+  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.overlay-arrow_right {
+  display: flex;
+  background-color: #6c6d6d;
+  justify-content: space-between;
+  position: absolute;
+  right: 0;
+  width: 54px;
+  height: 50px;
+  top: 50%;
+  z-index: 99;
 }
-h1 {
-  text-align: center;
-  margin: 20px auto;
+.overlay-arrow_left {
+  display: flex;
+  background-color: #6c6d6d;
+  justify-content: space-between;
+  position: absolute;
+  left: 0;
+  width: 54px;
+  height: 50px;
+  top: 50%;
+  z-index: 99;
+}
+.exit {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  /* background-color: red; */
 }
 .content {
-  border-radius: 10px;
-  background: blue;
+  display: grid;
+  grid-template-columns: auto;
 }
-h3 {
-  padding-top: 10px;
-  text-align: center;
-  color: #fff;
+@media screen and (min-width: 635px) {
+  .content {
+    grid-template-columns: auto auto;
+  }
 }
-article {
-  background-color: white;
-  margin: 20px;
-  padding: 1rem;
+@media screen and (min-width: 955px) {
+  .content {
+    grid-template-columns: auto auto auto;
+  }
 }
-button {
-  outline: none;
-  border: 2px solid blue;
-  background-color: white;
-  color: blue;
-  padding: 8px 5px;
-}
-.row1 {
-  display: flex;
-  justify-content: space-between;
+@media screen and (min-width: 1200px) { 
+  .content {
+    grid-template-columns: auto auto auto auto;
+  }
 }

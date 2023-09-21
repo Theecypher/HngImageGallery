@@ -1,15 +1,24 @@
+import { Route, Router, Routes } from "react-router-dom";
+import Signup from "./Components/Signup";
+import Modal from "./Components/Modal";
+import PictureSlide from "./Components/Picturesslide";
 import Home from "./Home";
-// impor
+
+
 
 const App = () => {
+
   return ( 
-    <div className="container">
-        <h1>Project 2: FAQ/Accordion</h1>
-        <div className="content">
-          <h3>Frequently asked question</h3>
-      <Home />
-        </div>
-    </div>
+      <div>
+        <section>
+          <Routes>
+            <Route element={<Home />} path="/" />
+            <Route element={<PictureSlide />} path="/pictureSlide" />
+            <Route element={<Signup />} path="/signup" />
+          </Routes>
+        </section>
+      </div>
+
    );
 }
  
