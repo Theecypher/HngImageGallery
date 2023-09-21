@@ -34,7 +34,7 @@ const PictureSlide = () => {
         setLoader(false)
       setImages(searchTerm.length < 1 ? data : searchResult)
     }, 3000)
-    }, [searchTerm])
+    }, [])
 
 
   const handleDragDrop = (results) => {
