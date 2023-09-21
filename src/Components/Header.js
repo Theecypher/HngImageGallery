@@ -21,7 +21,7 @@ const Header = ({ term, searchKeyWord }) => {
             </Link>
 
             <div className='input'>
-                    <input ref={inputRef} className="search" type="text" value={term} placeholder="Search Contact" onChange={getSearchTerm} />
+                    <input ref={inputRef} className="search" type="text" value={term} placeholder="Search" onChange={getSearchTerm} />
             </div>
         </div>
      );
