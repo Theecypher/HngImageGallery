@@ -28,12 +28,14 @@ const PictureSlide = () => {
     }
   }
 
-  useEffect(() => {
-    setLoader(true);
+   useEffect(() => {
       setTimeout(() => {
         setLoader(false)
+      }, 3000)
+    }, [])
+    
+    useEffect(() => {
       setImages(searchTerm.length < 1 ? data : searchResult)
-    }, 2000)
     }, [searchTerm])
 
 
